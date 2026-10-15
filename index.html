@@ -7,14 +7,14 @@
   <style>
     /* ตั้งค่าเริ่มต้นพื้นฐาน */
     body {
-      font-family: 'Sarabun', sans-serif;
-      text-align: center;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 10px;
-      -webkit-text-size-adjust: none;
-      text-size-adjust: none;
-    }
+  font-family: 'Sarabun', sans-serif;
+  text-align: center;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 10px;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
     
     /* กล่องหลักสำหรับใส่แผนผัง */
     .map-container {
@@ -35,23 +35,26 @@
 
     /* สไตล์ของกล่องโต๊ะแต่ละอัน */
     .table-marker {
-      position: absolute; /* ลอยทับรูปภาพ */
-      width: 2.8%;        /* ขนาดความกว้าง (ปรับให้พอดีกับโต๊ะในรูป) */
-      height: 2.5%;       /* ขนาดความสูง */
-      background-color: rgba(255, 255, 255, 0.8);
-      border: none;
-      border-radius: 3px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: clamp(10px, 1.5vw, 16px);     /* ให้ตัวหนังสือย่อขยายตามจอ */
-      font-weight: bold;
-      transform: translate(-50%, -50%); /* ให้พิกัดอยู่กึ่งกลางโต๊ะพอดี */
-      box-sizing: border-box;
-      transition: background-color 0.3s ease;
-      line-height: 1; 
-      overflow: hidden;
-    }
+  position: absolute; 
+  width: auto;             /* ให้กล่องยืดความกว้างตามตัวเลข */
+  min-width: 2.8%;         /* กำหนดความกว้างขั้นต่ำ */
+  height: 2.5%;       
+  padding: 0 0.5vw;        /* เพิ่มพื้นที่ว่างด้านข้างตัวเลข */
+  white-space: nowrap;     /* บังคับไม่ให้ตัวเลขตกบรรทัด */
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(8px, 1.2vw, 14px); /* ล็อกขนาดฟอนต์ เล็กสุด 8px ใหญ่สุดไม่เกิน 14px */
+  line-height: 1;          /* จัดระยะบรรทัดให้พอดีกรอบ */
+  overflow: hidden;        /* ตัดขอบส่วนที่ล้นออก */
+  font-weight: bold;
+  transform: translate(-50%, -50%); 
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
 
     /* สีสถานะโต๊ะ */
     .status-available { 
